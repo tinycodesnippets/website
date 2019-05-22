@@ -1,16 +1,11 @@
-
-// var jobs = require('../data/jobs.json');
-// var sideprojects = require('../data/sideprojects.json');
-var axios = require('axios');
-// var googleApiCrud = require("./google-api-crud.js");
+const axios = require('axios');
 const { promisify } = require('util');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 const PreSubcriber = require('../models/PreSubscriber');
-var db = require("../models");
-
+const db = require("../models");
 const randomBytesAsync = promisify(crypto.randomBytes);
 
 module.exports = function (app) {
@@ -20,7 +15,6 @@ module.exports = function (app) {
     var hbsObject = {
       user: req.user
     };
-    console.log(hbsObject);
     // console.log(hbsObject);
     res.render('index', {
       hbsObject: hbsObject
@@ -32,30 +26,25 @@ module.exports = function (app) {
    * Create a new local account.
    */
   app.post('/', function(req, res, next) {
-    console.log('post');
-    console.log('---------------------------');
-    console.log(req.body.body);
-    console.log('---------------------------');
+    // console.log('post');
+    // console.log('---------------------------');
+    // console.log(req.body.body);
+    // console.log('---------------------------');
     const preSubscribers = new PreSubcriber({
       email: req.body.body
     });
-    console.log(preSubscribers);
-    console.log(db);
+    
     preSubscribers.save((err, data) => {
-      console.log('Analyzing Data...');
+      // console.log('Analyzing Data...');
       if(data) {
-          console.log('Your data has been successfully saved.');
-          res.send(data);
+        // console.log('Your data has been successfully saved.');
+        res.send(data);
       }
       else {
-        console.log('Something went wrong while saving data.');
-        console.log(err);
+        // console.log('Something went wrong while saving data.');
+        // console.log(err);
         res.send(err);
       }
     });
-
   });
-
 };
-
-
