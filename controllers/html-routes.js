@@ -33,9 +33,11 @@ module.exports = function (app) {
    */
   app.post('/', function(req, res, next) {
     console.log('post');
-    console.log(req.body.EMAIL);
+    console.log('---------------------------');
+    console.log(req.body.body);
+    console.log('---------------------------');
     const preSubscribers = new PreSubcriber({
-      email: req.body.EMAIL
+      email: req.body.body
     });
     console.log(preSubscribers);
     console.log(db);
@@ -43,7 +45,7 @@ module.exports = function (app) {
       console.log('Analyzing Data...');
       if(data) {
           console.log('Your data has been successfully saved.');
-          res.json(data);
+          res.send(data);
       }
       else {
         console.log('Something went wrong while saving data.');
