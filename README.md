@@ -1,19 +1,14 @@
 # Tiny Code Snippets
 
-One Paragraph of project description goes here
+
+## Purpose
+
 Tiny Code Snippets is an outlet for sharing new JS, HTML, CSS tidbits!
 
 ### Prerequisites
 - gulp 3.9.1
 - node
 - mongodb
-
-## Purpose
-
-HomeStead is a web based SaaS application designed to be used by HOAs, Planned Communities, and Apartment Boards in order to dynamically manage their communities while also organically fostering a sense of community.
-
-Within the application, community members may plan and publish events, post classified, participate in resource sharing programs, and find necessary information from/exchange messages with community managers.  Community managers may also post account balances to each member and view and organize messages from users.  
-
 
 ## Tech Used
 
@@ -24,15 +19,12 @@ Within the application, community members may plan and publish events, post clas
 - [Moment.js](https://momentjs.com/)
 - [Passport](http://www.passportjs.org/)
 - [Gulp](https://gulpjs.com/)
-
-
 - HTML5, CSS3, SCSS, Javascript, and jQuery
 
 # Getting Started
 
 - Fork or clone the GitHub repo to your machine.
-- Ensure that you have Node.js, MySQL and Gulp installed on your machine.
-- If you have a password that protects your MySQL root user, enter that password in the connection.js file in the cloned repo.
+- Ensure that you have Node.js, mongo and Gulp installed on your machine.
 - In your CLI, navigate to the cloned directory. `npm install` the dependencies and run `npm start`
 
   `npm install`
@@ -58,7 +50,7 @@ The command `npm start` will automatically launch the project. navigate to `http
 
 The files watched by gulp are the client js and sass files.
 
-Client side js files are located at `public/assets/js/*.js`. Editing these files and saving will kick off a gulp build and auto refresh your development workspace.
+Client side js files are located at `public/assets/js/*/*.js`. Editing these files and saving will kick off a gulp build and auto refresh your development workspace.
 
 Sass files are located at `sass/partials/*.scss`. Editing these files and saving will kick off a gulp build and auto refresh your development workspace.
 
