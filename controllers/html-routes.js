@@ -47,4 +47,18 @@ module.exports = function (app) {
       }
     });
   });
+
+
+  // Home Page
+  app.get('/index2', function (req, res) {
+    // assign the handlebar object any data to be read into the template. this separates the data from the markup.
+    var hbsObject = {
+      user: req.user
+    };
+    // console.log(hbsObject);
+    res.render('index2', {
+      hbsObject: hbsObject
+    });
+  });
+
 };
